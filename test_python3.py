@@ -5,6 +5,7 @@ import random
 import json
 from unittest.mock import patch
 
+pwd = os.getcwd()
 
 if not os.path.exists('python3.py'):
     with open('task3.json') as json_data:
@@ -16,7 +17,7 @@ if not os.path.exists('python3.py'):
     with open('python3.py', 'w') as f:
         f.write("#--------------------------\n'''")
         f.writelines(text)
-        f.write("'''\n\n\n\n#=====================================")
+        f.write("'''\n\n\n\n#======================================================================================================================"+pwd)
         
 
 from python3 import *
@@ -193,3 +194,4 @@ def test_harommal_oszthato_szamok_a_fajlban():
 def test_neggyel_oszthato_szamok_a_fajlban():
     assert neggyel_oszthato_szamok_a_fajlban('szamok1.txt') == [4, 4, 0, -4, 0, 4, 4]
     assert neggyel_oszthato_szamok_a_fajlban('szamok2.txt') == [4, 4, 0, -4, 0, 4, 4, 12, 44] 
+
