@@ -1,5 +1,24 @@
-import pytest
 import os
+import pytest
+import math
+import random
+import json
+from unittest.mock import patch
+
+
+if not os.path.exists('python3.py'):
+    with open('task3.json') as json_data:
+        lista = json.load(json_data)
+    
+    random.shuffle(lista)
+    text = "'''\n\n\n\n#--------------------------\n'''".join(lista)
+    
+    with open('python3.py', 'w') as f:
+        f.write("#--------------------------\n'''")
+        f.writelines(text)
+        f.write("'''\n\n\n\n#=====================================")
+        
+
 from python3 import *
 
 # 01 - Karakterek száma a fájlban
