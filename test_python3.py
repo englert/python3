@@ -119,6 +119,10 @@ def test_utolso_karakter_a_fajlban():
 def test_szamok_osszege_a_fajlban():
     assert szamok_osszege_a_fajlban('szamok1.txt') == 16
     assert szamok_osszege_a_fajlban('szamok2.txt') == 100
+    @patch('builtins.sum')
+    def test_sum_not_called(mock_sum):
+        test_szamok_osszege_a_fajlban(1, 2)
+        mock_sum.assert_not_called()
 
 # 16 - Számok átlaga egy szövegfájlban
 def test_szamok_atlaga_a_fajlban():
