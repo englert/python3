@@ -6,14 +6,14 @@ import json
 from unittest.mock import patch
 
 pwd = os.getcwd()
-if not os.path.exists('python1.py'):
+if not os.path.exists('python3.py'):
     with open('tasks.json', 'r', encoding='utf-8') as json_data:
         lista = json.load(json_data)
     
     random.shuffle(lista)
     text = "'''\n\n\n\n#--------------------------\n'''".join(lista)
     
-    with open('python1.py', 'w',encoding='utf-8') as f:
+    with open('python3.py', 'w',encoding='utf-8') as f:
         f.write("#--------------------------\n'''")
         f.writelines(text)
         f.write("'''\n\n\n\n#======================================================================================================================"+pwd)
